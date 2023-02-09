@@ -1,3 +1,4 @@
+import { JobCards } from "../../jobcards/jbcard"
 import "./home.css"
 export const Home = () => {
     return (
@@ -15,6 +16,27 @@ export const Home = () => {
                     </div>
                     <button type="submit" className="submit">Search job</button>
                 </form>
+            </section>
+
+            <section className="jobs">
+                <div className="filters">
+                    <label className="labelTitle" htmlFor="filter">Filter by</label>
+                    <div className="checkboxes">
+                        <div>
+                            <input type="checkbox" id="internship" name="internship" value="Internship" />
+                            <label for="internship">Internship</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="partTime" name="partTime" value="partTime" />
+                            <label for="partTime">Part time</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="fulltime" name="fulltime" value="fulltime" />
+                            <label for="fulltime">Full-time</label>
+                        </div>
+                    </div>
+                </div>
+                <JobCards />
             </section>
         </main>
     )
