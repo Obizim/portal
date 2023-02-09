@@ -7,7 +7,7 @@ export const Nav = () => {
             <h1 className="logo">gradlink</h1>
 
             <ul className="menu_links">
-                <li>Find jobs</li>
+                <li>Login</li>
                 <li>Sign in</li>
             </ul>
         </nav>
