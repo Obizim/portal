@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import "./nav.css";
 
 export const Nav = () => {
@@ -7,8 +8,8 @@ export const Nav = () => {
             <h1 className="logo">gradlink</h1>
 
             <ul className="menu_links">
-                <li>Login</li>
-                <li>Sign in</li>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/signup">Create account</Link></li>
             </ul>
         </nav>
     </header>

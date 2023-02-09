@@ -1,4 +1,4 @@
-import { JobCards } from "../../jobcards/jbcard"
+import { JobCards } from "../../components/jobcards/jbcard"
 import "./home.css"
 export const Home = () => {
     return (
