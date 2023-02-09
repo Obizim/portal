@@ -7,7 +7,7 @@ export const Home = () => {
                 <h1 className="title">Find a <span className="titleColor">graduate/internship </span><br /> job around you</h1>
                 <p className="subtitle">Thousands of entry-level and internship roles for students across different sectors</p>
 
-                <form>
+                <form className="form">
                     <div className="form_title">
                         <input type="text" placeholder="What position are you looking for?" />
                     </div>
