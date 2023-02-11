@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
 import './jbcard.css'
 
 export const JobCards = () => {
     return (
         <section className='cards'>
+            <Link to="/job/number">
             <div className="card">
                 <div className="card_image">
                     <img src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e" alt="" />
@@ -39,6 +41,7 @@ export const JobCards = () => {
                     <p className='description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam voluptas cum assumenda perspiciatis quos. Fuga voluptas eum quisquam itaque magni. Vel inventore laudantium architecto magni officia illo sed veniam eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam voluptate est. Fugit voluptatem quasi ex alias eligendi hic unde ullam, facere quam ratione aliquam rerum temporibus eum culpa deserunt!</p>
                 </div>
             </div>
+            </Link>
         </section>
     )
 }

@@ -3,6 +3,7 @@ import { Footer } from "./components/footer";
 import { Nav } from "./components/Nav/nav";
 import { SignIn, SignUp } from "./views/auth/auth";
 import { Home } from "./views/home";
+import { JobPage } from "./views/jobpage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={ <Home />} />
         <Route path="/login" element={ <SignIn />} />
         <Route path="/signup" element={ <SignUp />} />
+        <Route path="/job/number" element={ <JobPage />} />
       </Routes>
       <Footer />
     </div>
