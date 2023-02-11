@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../../components/forms/button";
 import "./jobpage.css";
 
@@ -38,7 +39,7 @@ export const JobPage = () => {
             recommendations in collaboration with client team members. */}
           </p>
         </div>
-        <Button value="Apply now" />
+        <Link to="/job/number/apply"><Button value="Apply now" /></Link>
       </div>
 
       <div className="related_jobs">
