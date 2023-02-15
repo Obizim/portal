@@ -8,8 +8,8 @@ export const Nav = () => {
             <h1 className="logo">gradlink</h1>
 
             <ul className="menu_links">
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/signup">Create account</Link></li>
+                <Link to="/login"><li>Login</li></Link>
+                <Link to="/signup" className='create-acount'><li>Create account</li></Link>
             </ul>
         </nav>
     </header>

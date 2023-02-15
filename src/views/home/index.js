@@ -19,12 +19,12 @@ export const Home = () => {
             </section>
 
             <section className="jobs">
-                <div className="filters">
+                {/* <div className="filters">
                     <label className="labelTitle" htmlFor="filter">Filter by</label>
                     <div className="checkboxes">
-                        <div>
-                            <input type="checkbox" id="internship" name="internship" value="Internship" />
-                            <label for="internship">Internship</label>
+                    <div>
+                    <input type="checkbox" id="internship" name="internship" value="Internship" />
+                    <label for="internship">Internship</label>
                         </div>
                         <div>
                             <input type="checkbox" id="partTime" name="partTime" value="partTime" />
@@ -35,8 +35,15 @@ export const Home = () => {
                             <label for="fulltime">Full-time</label>
                         </div>
                     </div>
+                </div> */}
+                <div className="sidebar">
+                    <h2>Resources</h2>
+                    <p>Career resources to help you on your journey</p>
                 </div>
-                <JobCards />
+                <div>
+                    <h2>Latest Opportunities</h2>
+                    <JobCards />
+                </div>
             </section>
         </main>
     )

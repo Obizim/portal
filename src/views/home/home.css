@@ -47,7 +47,19 @@
     margin: 5rem 0;
 }
 
-.filters {
+.sidebar {
+    background-color: #e2e2e2;
+    height: max-content;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sidebar h2 {
+    margin: 1rem 0;
+}
+
+/* .filters {
     display: flex;
     flex-direction: column;
 }
@@ -68,4 +80,4 @@
     height: 1rem;
     width: 1.5rem;
     cursor: pointer;
-}
+} */
