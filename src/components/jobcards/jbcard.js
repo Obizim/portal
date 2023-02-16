@@ -4,7 +4,7 @@ import './jbcard.css'
 export const JobCards = () => {
     return (
         <section className='cards'>
-            <Link to="/job/number">
+            <Link to="/jobs/number">
             <div className="card">
                 <div className="card_image">
                     <img src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e" alt="" />

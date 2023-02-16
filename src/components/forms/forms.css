@@ -48,3 +48,28 @@
 .div-flex > * {
     width: 100%;
 }
+
+
+.form {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+}
+.form input {
+    outline: 1px solid rgb(218, 218, 218);
+    height: 3rem;
+    flex-basis: 25%;
+    width: 100%;
+}
+
+.submit {
+    background-color: #000AFF;
+    border: 2px solid #000AFF;
+    color: #fff;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+}
