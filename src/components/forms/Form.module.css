@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+ }
+ .form input {
+     outline: 2px solid rgb(218, 218, 218);
+     height: 4rem;
+     flex-basis: 25%;
+     width: 100%;
+     padding: .3rem;
+     border: transparent;
+     border-radius: var(--border-radius);
+ }
+ .submit {
+     background-color: var(--blue);
+     border: transparent;
+     outline: 2px solid rgb(218, 218, 218);
+     border-radius: var(--border-radius);
+     color: #fff;
+     height: 4.2rem;
+     display: flex;
+     align-items: center;
+     padding: 1.5rem;
+     cursor: pointer;
+ }
