@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import Styles from '@/pages/jobs/Jobs.module.css'
+import { Button } from '@/components/forms/button';
 
 export default function JbDetail() {
   return (
@@ -37,7 +39,7 @@ export default function JbDetail() {
           recommendations in collaboration with client team members. */}
           </p>
         </div>
-        {/* <Link to="/job/number/apply"><Button value="Apply now" /></Link> */}
+        <Link href="/"><Button value="Apply now" /></Link>
       </div>
 
       <div className={Styles.related_jobs}>

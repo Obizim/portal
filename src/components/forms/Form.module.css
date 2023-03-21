@@ -25,3 +25,14 @@
      padding: 1.5rem;
      cursor: pointer;
  }
+
+ .formSubmit {
+    margin: 1rem 0;
+    outline: 2px solid rgb(218, 218, 218);
+    color: #fff;
+    border: transparent;
+    background-color: var(--blue);
+    border-radius: var(--border-radius);
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+}
