@@ -1,0 +1,10 @@
+.authContainer{
+    max-width: 980px;
+    padding: 1rem .9rem;
+    margin: 4rem auto;
+}
+
+.title {
+    color: #000AFF;
+    margin-bottom: 2rem;
+}

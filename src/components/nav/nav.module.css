@@ -1,0 +1,32 @@
+/* header {
+    background: #9F9F9F;
+} */
+
+.logo {
+    color: #000AFF;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    padding: 1rem .9rem;
+    margin:  0 auto;
+}
+
+.menu_links {
+    display: flex;
+    align-items: center;
+}
+
+.create_account{
+    padding: 1rem;
+    margin-left: 1rem;
+    background: #000AFF;
+    color: #fff;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
