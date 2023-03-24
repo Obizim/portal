@@ -16,15 +16,15 @@ export default function Jobs() {
         <div className={Styles.checkboxes}>
             <div>
                 <input type="checkbox" id="internship" name="internship" value="Internship" />
-                <label for="internship">Internship</label>
+                <label htmlFor="internship">Internship</label>
             </div>
             <div>
                 <input type="checkbox" id="partTime" name="partTime" value="partTime" />
-                <label for="partTime">Part time</label>
+                <label htmlFor="partTime">Part time</label>
             </div>
             <div>
                 <input type="checkbox" id="fulltime" name="fulltime" value="fulltime" />
-                <label for="fulltime">Full-time</label>
+                <label htmlFor="fulltime">Full-time</label>
             </div>
         </div>
     </div>

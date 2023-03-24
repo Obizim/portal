@@ -1,10 +1,17 @@
 import styles from "@/components/forms/Form.module.css";
 
-export const Input = ({ name, type, placeholder }) => {
+export const Input = ({ value, name, click, type, placeholder }) => {
   return (
     <div className={styles.inputForm}>
-      <label htmlFor={name}>{name}</label>
-      <input type={type} id={name} placeholder={placeholder} />
+      <label className={styles.labelFor} htmlFor={value}>{name}</label>
+      <input
+        type={type}
+        id={name}
+        name={name}
+        value={value}
+        onChange={click}
+        placeholder={placeholder}
+      />
     </div>
   );
 };

@@ -1,20 +1,73 @@
-import { Button } from '@/components/forms/button';
-import { Input } from '@/components/forms/input';
-import { Select } from '@/components/forms/select';
-import Styles from '@/pages/auth/auth.module.css'
+import axios from "axios";
+import { useRouter } from "next/router";
+import {toast} from 'react-toastify'
+import { Button } from "@/components/forms/button";
+import { Input } from "@/components/forms/input";
+import { Select } from "@/components/forms/select";
+import { authContext } from "@/context/auth";
+import Styles from "@/pages/auth/auth.module.css";
+import { useContext, useState } from "react";
 
 export default function Signup() {
-    return (
-      <section className={Styles.authContainer}>
-        <h2 className={Styles.title}>Create Account</h2>
-        <form className={Styles.authForm}>
-          <Select />
-          <Input name="Name" type="text" placeholder="Name/Company Name" />
-          <Input name="Email" type="email" placeholder="Email address" />
-          <Input name="Password" type="password" placeholder="Password" />
-          <Button type="submit" value="Create account" />
-        </form>
-      </section>
-    );
+  const [formData, setFormData] = useState({
+    role: "individual",
+    name: "",
+    email: "",
+    password: "",
+  });
+  const { role, name, email, password } = formData;
+  const { user, setUser } = useContext(authContext);
+  const router = useRouter();
+
+  const onChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (name === "" || email === "" || password === "") {
+      toast.error("Please fill all missing fields !!",{
+        theme: "colored"
+      });
+    } else if (password.length < 5) {
+      toast.error("Minimum Password is 6 characters !!",{
+        theme: "colored"
+      });
+    }else{
+      const data = await axios.post("http://localhost:4000/api/users",formData)
+      setUser(data.data);
+      console.log(data.data);
+      // router.push("/jobs");
+    }
+  };
+  return (
+    <section className={Styles.authContainer}>
+      <h2 className={Styles.title}>Create Account</h2>
+      <form onSubmit={onSubmit} className={Styles.authForm}>
+        <Select value={role} name="role" click={onChange} />
+        <Input
+          value={name}
+          name="name"
+          click={onChange}
+          type="text"
+          placeholder="Name/Company Name"
+        />
+        <Input
+          value={email}
+          name="email"
+          click={onChange}
+          type="email"
+          placeholder="Email address"
+        />
+        <Input
+          value={password}
+          name="password"
+          click={onChange}
+          type="password"
+          placeholder="Password"
+        />
+        <Button type="submit" value="Create account" />
+      </form>
+    </section>
+  );
+}

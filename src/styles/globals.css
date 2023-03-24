@@ -42,9 +42,13 @@ a {
   text-decoration: none;
 }
 
-input, select {
+input,
+select {
   color: inherit;
   font: inherit;
+}
+
+input[type="checkbox"] {
   cursor: pointer;
 }
 

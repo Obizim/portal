@@ -1,6 +1,7 @@
 import { Button } from '@/components/forms/button';
 import { Input } from '@/components/forms/input';
 import { Select } from '@/components/forms/select';
+import { authContext } from '@/context/auth';
 import Styles from '@/pages/auth/auth.module.css'
 
 
