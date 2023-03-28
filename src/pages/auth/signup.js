@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import {toast} from 'react-toastify'
+import Cookies from 'js-cookie'
 import { Button } from "@/components/forms/button";
 import { Input } from "@/components/forms/input";
 import { Select } from "@/components/forms/select";
-import { authContext } from "@/context/auth";
 import Styles from "@/pages/auth/auth.module.css";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -16,7 +16,6 @@ export default function Signup() {
     password: "",
   });
   const { role, name, email, password } = formData;
-  const { user, setUser } = useContext(authContext);
   const router = useRouter();
 
   const onChange = (e) => {
@@ -34,10 +33,20 @@ export default function Signup() {
         theme: "colored"
       });
     }else{
-      const data = await axios.post("http://localhost:4000/api/users",formData)
-      setUser(data.data);
-      console.log(data.data);
-      // router.push("/jobs");
+      try{
+        const res = await axios.post("http://localhost:4000/api/users",formData)
+        let data = res.data
+        Cookies.set('userToken', data.token, { expires: 7 })
+        router.push("/jobs");
+        toast.success('Successful sign-in',{
+          theme: "colored"
+        });
+        return data
+      }catch(e) {
+        toast.error(`${e.response.data.message}`,{
+          theme: "colored"
+        });
+      }
     }
   };
   return (

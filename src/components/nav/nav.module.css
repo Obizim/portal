@@ -22,6 +22,10 @@
     align-items: center;
 }
 
+.menu_links > *{
+    margin: 0 .5rem;
+}
+
 .create_account{
     padding: 1rem;
     margin-left: 1rem;
