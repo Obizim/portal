@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
       <main className={styles.main_layout}>
         <section className={styles.heading}>
-         <h1 className={styles.title}>Find a <span className={styles.titleColor}>graduate/internship </span><br /> job around you</h1>
+         <h1 className={styles.title}>Find a <span className={styles.titleColor}>graduate/internship </span><br /> role around you</h1>
          <p className={styles.subtitle}>Discover new opportunities for growth and development with our broad range of entry-level and internship positions and 
                   gain hands-on experience in a variety of industries with our extensive selection</p>
          <Search />
