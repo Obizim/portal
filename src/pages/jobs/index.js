@@ -1,5 +1,5 @@
 import { Search } from '@/components/forms/search'
-import { JbCards } from '@/components/cards/JbCards'
+import { JbCards } from '@/components/cards/jbcards'
 import Styles from '@/pages/jobs/Jobs.module.css'
 
 export default function Jobs() {

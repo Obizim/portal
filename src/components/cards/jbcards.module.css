@@ -42,6 +42,11 @@
   margin-bottom: 0.5rem;
 }
 
+.cl > * {
+  display: flex;
+  align-items: center;
+}
+
 .cl > p:last-child {
   margin-left: 4rem;
 }

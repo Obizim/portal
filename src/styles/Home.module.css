@@ -297,6 +297,8 @@
 
 .subtitle {
   padding: 2rem 0;
+  width: 75%;
+  line-height: 1.7;
 }
 
 .jobs {
@@ -317,4 +319,15 @@
 
 .sidebar h2 {
   margin: 1rem 0;
+}
+
+.resources {
+  border: 1px solid gray;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-top: 2rem;
 }

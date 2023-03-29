@@ -2,6 +2,8 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Search } from '@/components/forms/search'
 import { JbCards } from '@/components/cards/jbcards'
+import { FiArrowRight } from 'react-icons/fi'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -15,14 +17,16 @@ export default function Home() {
       <main className={styles.main_layout}>
         <section className={styles.heading}>
          <h1 className={styles.title}>Find a <span className={styles.titleColor}>graduate/internship </span><br /> job around you</h1>
-         <p className={styles.subtitle}>Thousands of entry-level and internship roles for students across different sectors</p>
+         <p className={styles.subtitle}>Discover new opportunities for growth and development with our broad range of entry-level and internship positions and 
+                  gain hands-on experience in a variety of industries with our extensive selection</p>
          <Search />
        </section>
 
        <section className={styles.jobs}>
           <div className={styles.sidebar}>
             <h2>Resources</h2>
-            <p>Career resources to help you on your journey</p>
+            <p>Career resources to help you on your journey.</p>
+            <Link href="/resources" className={styles.resources}><FiArrowRight /></Link>
           </div>
           <div>
             <h2>Latest Opportunities</h2>
