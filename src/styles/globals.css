@@ -43,7 +43,7 @@ a {
 }
 
 input,
-select, button {
+select, button, option {
   color: inherit;
   font: inherit;
 }

@@ -34,11 +34,12 @@ export default function Signup() {
       });
     }else{
       try{
-        const res = await axios.post("http://localhost:4000/api/users",formData)
+        const res = await axios.post("http://localhost:4000/api/users", formData)
         let data = res.data
         Cookies.set('userToken', data.token, { expires: 7 })
+        router.reload()
         router.push("/jobs");
-        toast.success('Successful sign-in',{
+        toast.success('Registration successful',{
           theme: "colored"
         });
         return data

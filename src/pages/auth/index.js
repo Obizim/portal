@@ -1,9 +1,12 @@
 import { Button } from "@/components/forms/button";
 import { Input } from "@/components/forms/input";
 import { Select } from "@/components/forms/select";
-import { authContext } from "@/context/auth";
 import Styles from "@/pages/auth/auth.module.css";
+import axios from "axios";
+import Cookies from "js-cookie";
 import { useState } from "react";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -12,6 +15,7 @@ export default function Login() {
     password: "",
   });
   const { role, email, password } = formData;
+  const router = useRouter();
 
   const onChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -19,21 +23,27 @@ export default function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // if (name === "" || email === "" || password === "") {
-    //   toast.error("Please fill all missing fields !!",{
-    //     theme: "colored"
-    //   });
-    // } else if (password.length < 5) {
-    //   toast.error("Minimum Password is 6 characters !!",{
-    //     theme: "colored"
-    //   });
-    // }else{
-    //   const data = await axios.post("http://localhost:4000/api/users",formData)
-    //   setUser(data.data);
-    //   console.log(data.data);
-    //   // router.push("/jobs");
-    // }
+    if (email === "" || password === "") {
+      toast.error("Please fill all missing fields !!",{
+        theme: "colored"
+      });
+    }else{
+      try{
+        const res = await axios.post("http://localhost:4000/api/users/login", formData)
+        let data = res.data
+        Cookies.set('userToken', data.token, { expires: 7 })
+        router.reload()
+        router.push("/jobs");
+        toast.success('Login successful',{
+          theme: "colored"
+        });
+        return data
+      }catch(e) {
+        toast.error(`${e.response.data.message}`,{
+          theme: "colored"
+        });
+      }
+    }
   };
 
   return (
