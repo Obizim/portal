@@ -1,8 +1,11 @@
 import { Search } from '@/components/forms/search'
 import { JbCards } from '@/components/cards/jbcards'
 import Styles from '@/pages/jobs/Jobs.module.css'
+import { useContext } from 'react'
+import { authContext } from '@/context/auth'
 
 export default function Jobs() {
+    const { data } = useContext(authContext)
     return (
         <section className={Styles.viewsJobs}>
             <header className={Styles.header_bg}>

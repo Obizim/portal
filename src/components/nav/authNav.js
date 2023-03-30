@@ -21,7 +21,7 @@ export const AuthNav = () => {
     <nav className={Styles.nav}>
         <h1 className={Styles.logo}>gradlink</h1>
         <ul className={Styles.menu_links}>
-            <Link href="/jobs"><li>Jobs</li></Link>
+            <Link href="/jobs"><li>Find Jobs</li></Link>
             <Link href="/resources"><li>Resources</li></Link>
             {user.role === 'recruiter' && <Link href="/postjobs"><li>Post job</li></Link>}
             <div class={Styles.dropdown}>
