@@ -8,3 +8,14 @@
     color: #000AFF;
     margin-bottom: 2rem;
 }
+
+.forget {
+    text-align: right;
+}
+
+.notYet {
+    text-align: center;
+}
+.notYet > a{
+    color: #000AFF
+}

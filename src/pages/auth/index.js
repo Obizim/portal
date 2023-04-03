@@ -1,20 +1,19 @@
 import { Button } from "@/components/forms/button";
 import { Input } from "@/components/forms/input";
-import { Select } from "@/components/forms/select";
 import Styles from "@/pages/auth/auth.module.css";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Login() {
   const [formData, setFormData] = useState({
-    role: "individual",
     email: "",
     password: "",
   });
-  const { role, email, password } = formData;
+  const { email, password } = formData;
   const router = useRouter();
 
   const onChange = (e) => {
@@ -50,7 +49,6 @@ export default function Login() {
     <section className={Styles.authContainer}>
       <h2 className={Styles.title}>Login</h2>
       <form onSubmit={onSubmit} className={Styles.authForm}>
-        <Select value={role} name="role" click={onChange} />
         <Input
           value={email}
           name="email"
@@ -65,8 +63,11 @@ export default function Login() {
           type="password"
           placeholder="Password"
         />
+        <p className={Styles.forget}>Forgot Password?</p>
         <Button type="submit" value="Login" />
       </form>
+
+      <div className={Styles.notYet}>Not registered yet? <Link href="/auth/signup">Register!</Link></div>
     </section>
   );
 }

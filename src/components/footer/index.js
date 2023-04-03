@@ -6,16 +6,20 @@ export const Footer = () => {
       <div className={Styles.footer}>
         <div>
           <h1 className={Styles.footer_title}>gradlink</h1>
-          <p>Middlesex University, London hendon Campus NW4 BT</p>
+          <p>Middlesex University, London Hendon Campus NW4 BT</p>
         </div>
 
         <ul>
-          <li>Privacy policies</li>
+          <li>Privacy</li>
           <li>Careers</li>
           <li>About us</li>
+          <li>Cookie Policy</li>
         </ul>
 
-        <p>&copy; gradlink 2023</p>
+        <ul>
+          <li>Terms of use</li>
+          <li>&copy; gradlink 2023</li>
+        </ul>
       </div>
     </footer>
   );

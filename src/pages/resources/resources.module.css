@@ -6,7 +6,7 @@
 
 .cards {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 @media (min-width: 600px) {
@@ -20,7 +20,7 @@
   }
 }
 .card {
-  background-color: rgb(235, 232, 232);
+  background-color: rgb(243, 243, 243);
   box-shadow: 0 0 0 1px rgba(#000, 0.05), 0 20px 50px 0 rgba(#000, 0.1);
   border-radius: 15px;
   padding: 1rem;
@@ -40,12 +40,13 @@
 }
 
 .read_more {
-    background-color: #000AFF;
-    border: 1px solid #000AFF;
-    margin: .5rem 0;
+    background-color: transparent;
+    border: transparent;
+    margin: .5rem 0 0;
     padding: .5rem;
+    text-decoration: underline;
     width: max-content;
     cursor: pointer;
-    border-radius: 2px;
-    color: #fff;
+    /* border-radius: 2px; */
+    /* color: #fff; */
 }

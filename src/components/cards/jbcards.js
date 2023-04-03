@@ -20,7 +20,7 @@ export const JbCards = () => {
                     <h3>Junior Architect</h3>
                     <div className={styles.cl}>
                         <p><FiMapPin/> London</p>
-                        <p><FiDollarSign /> $30,000</p>
+                        <p>$30,000</p>
                     </div>
                     <p className={styles.description}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam voluptas cum assumenda perspiciatis quos. Fuga voluptas eum quisquam itaque magni. Vel inventore laudantium architecto magni officia illo sed veniam eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam voluptate est. Fugit voluptatem quasi ex alias eligendi hic unde ullam, facere quam ratione aliquam rerum temporibus eum culpa deserunt!</p>
                 </div>

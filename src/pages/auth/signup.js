@@ -7,6 +7,7 @@ import { Input } from "@/components/forms/input";
 import { Select } from "@/components/forms/select";
 import Styles from "@/pages/auth/auth.module.css";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -78,6 +79,8 @@ export default function Signup() {
         />
         <Button type="submit" value="Create account" />
       </form>
+
+      <div className={Styles.notYet}>Already registered? <Link href="/auth">Login!</Link></div>
     </section>
   );
 }
