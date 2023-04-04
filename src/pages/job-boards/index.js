@@ -1,6 +1,6 @@
 import { Search } from '@/components/forms/search'
 import { JbCards } from '@/components/cards/jbcards'
-import Styles from '@/pages/jobs/Jobs.module.css'
+import Styles from '@/pages/job-boards/Jobs.module.css'
 import { useContext } from 'react'
 import { authContext } from '@/context/auth'
 

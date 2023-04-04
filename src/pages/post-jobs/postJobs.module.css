@@ -1,0 +1,30 @@
+.PostContainer {
+  max-width: 960px;
+  padding: 1rem 0.9rem;
+  margin: 3rem auto;
+}
+
+.title {
+  color: #000aff;
+  margin-bottom: 2rem;
+}
+
+.PostForm {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+@media (min-width: 600px) {
+  .PostForm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.editor {
+  grid-column: 1/-1;
+  margin-bottom: 2rem;
+}
+
+.PostForm > *:last-child{
+    width: max-content;
+}
