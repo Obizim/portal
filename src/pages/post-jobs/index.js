@@ -1,33 +1,65 @@
 import { Button } from "@/components/forms/button";
 import { Input } from "@/components/forms/input";
+import { SelectJobType } from "@/components/forms/select";
 import Styles from "@/pages/post-jobs/postJobs.module.css";
+import axios from "axios";
+import Cookies from "js-cookie";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { toast } from "react-toastify";
 
 export default function PostJobs() {
   const [formData, setFormData] = useState({
     jobTitle: "",
     companyName: "",
+    type: "full-time",
     location: "",
     salary: "",
   });
-  const [desc, setDesc] = useState('')
-  const [file, setFile] = useState()
-  const { jobTitle, companyName, location, salary } = formData;
+  const [desc, setDesc] = useState("");
+  const { jobTitle, companyName,type, location, salary } = formData;
 
   const onChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleFileChange = (e) => {
-    if (e.target.files) {
-      setFile(e.target.files[0]);
-    }
-  };
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    console.log({jobTitle, companyName, location, salary, file, desc});
+    if (
+      jobTitle === "" ||
+      companyName === "" ||
+      type === "" ||
+      location === "" ||
+      salary === "" ||
+      desc === ""
+    ) {
+      toast.error("Please fill all missing fields !!", {
+        theme: "colored",
+      });
+    } else {
+      const userToken = Cookies.get('userToken')
+      try {
+        const res = await axios.post("http://localhost:4000/api/jobs", {
+          jobTitle,
+          companyName,
+          type,
+          location,
+          salary,
+          desc,
+        },{ headers: {Authorization : `Bearer ${userToken}`}} );
+        let data = res.data;
+        console.log(data);
+        toast.success("Job post successful", {
+          theme: "colored",
+        });
+        return data;
+      } catch (e) {
+        toast.error(`${e.response.data.message}`, {
+          theme: "colored",
+        });
+      }
+    }
   };
 
   return (
@@ -62,12 +94,7 @@ export default function PostJobs() {
           type="text"
           placeholder="Salary"
         />
-        <Input
-          name="CompanyImage"
-          click={handleFileChange}
-          type="file"
-          placeholder="Company Logo"
-        />
+        <SelectJobType value={type} name="type" click={onChange} />
         <ReactQuill
           theme="snow"
           value={desc}
