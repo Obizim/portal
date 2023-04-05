@@ -28,3 +28,8 @@
 .PostForm > *:last-child{
     width: max-content;
 }
+
+.load_flex {
+  display: flex;
+  
+}

@@ -1,15 +1,19 @@
 import { Button } from "@/components/forms/button";
 import { Input } from "@/components/forms/input";
 import { SelectJobType } from "@/components/forms/select";
+import { Loading } from "@/components/loading";
 import Styles from "@/pages/post-jobs/postJobs.module.css";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function PostJobs() {
+  const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     jobTitle: "",
     companyName: "",
@@ -19,6 +23,8 @@ export default function PostJobs() {
   });
   const [desc, setDesc] = useState("");
   const { jobTitle, companyName,type, location, salary } = formData;
+  // const 
+  const router = useRouter();
 
   const onChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -38,8 +44,9 @@ export default function PostJobs() {
         theme: "colored",
       });
     } else {
-      const userToken = Cookies.get('userToken')
       try {
+        setLoading(true)
+        const userToken = Cookies.get('userToken')
         const res = await axios.post("http://localhost:4000/api/jobs", {
           jobTitle,
           companyName,
@@ -49,11 +56,11 @@ export default function PostJobs() {
           desc,
         },{ headers: {Authorization : `Bearer ${userToken}`}} );
         let data = res.data;
-        console.log(data);
         toast.success("Job post successful", {
           theme: "colored",
         });
-        return data;
+        setLoading(false)
+        router.push("/job-boards")
       } catch (e) {
         toast.error(`${e.response.data.message}`, {
           theme: "colored",
@@ -101,7 +108,10 @@ export default function PostJobs() {
           onChange={setDesc}
           className={Styles.editor}
         />
-        <Button type="submit" value="Submit" />
+        <div className={Styles.load_flex}>
+        <Button type="submit" value="Submit" /> 
+        {loading && <Loading />}
+        </div>
       </form>
     </section>
   );
