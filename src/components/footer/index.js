@@ -18,9 +18,16 @@ export const Footer = () => {
 
         <ul>
           <li>Terms of use</li>
-          <li>&copy; gradlink 2023</li>
+          <li>
+            <label htmlFor="newsletter">Subscribe to our newsletter</label>
+            <div className={Styles.newsletter}>
+            <input type="email" name="newsletter" id="newsletter" placeholder='Enter your email' />
+            <button>Subscribe</button>
+            </div>
+          </li>
         </ul>
       </div>
+      <p className={Styles.copyright}>&copy; gradlink 2023</p>
     </footer>
   );
 };

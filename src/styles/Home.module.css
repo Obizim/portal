@@ -302,11 +302,16 @@
 }
 
 .jobs {
-  width: 1000px;
+  max-width: 1000px;
   display: grid;
-  grid-template-columns: .5fr 1fr;
   gap: 4rem;
   margin: 5rem 0;
+}
+
+@media (min-width: 680px) {
+  .jobs {
+    grid-template-columns: .5fr 1fr;
+  }
 }
 
 .sidebar {

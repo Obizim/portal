@@ -19,3 +19,7 @@
 .notYet > a{
     color: #000AFF
 }
+
+.load_flex {
+    display: flex;
+  }

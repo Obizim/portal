@@ -1,73 +1,83 @@
 .form {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
- }
- .form input {
-     outline: 2px solid rgb(218, 218, 218);
-     height: 4rem;
-     flex-basis: 25%;
-     width: 100%;
-     padding: .3rem;
-     border: transparent;
-     border-radius: var(--border-radius);
- }
- .submit {
-     background-color: var(--blue);
-     border: transparent;
-     outline: 2px solid rgb(218, 218, 218);
-     border-radius: var(--border-radius);
-     color: #fff;
-     height: 4.2rem;
-     display: flex;
-     align-items: center;
-     padding: 1.5rem;
-     cursor: pointer;
- }
-
- .formSubmit {
-    margin: 1rem 0;
-    outline: 2px solid rgb(218, 218, 218);
-    color: #fff;
-    border: transparent;
-    background-color: var(--blue);
-    border-radius: var(--border-radius);
-    padding: 1.2rem 2rem;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.form input {
+  outline: 2px solid rgb(218, 218, 218);
+  height: 4rem;
+  flex-basis: 25%;
+  width: 100%;
+  padding: 1.1rem;
+  border: transparent;
+  border-radius: var(--border-radius);
+}
+.submit {
+  background-color: var(--blue);
+  border: transparent;
+  outline: 2px solid rgb(218, 218, 218);
+  border-radius: var(--border-radius);
+  color: #fff;
+  height: 4.2rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
 }
 
+@media (min-width: 680px) {
+  .form {
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .form input {
+    padding: 0.3rem;
+  }
+}
+
+.formSubmit {
+  margin: 1rem 0;
+  outline: 2px solid rgb(218, 218, 218);
+  color: #fff;
+  border: transparent;
+  background-color: var(--blue);
+  border-radius: var(--border-radius);
+  padding: 1.2rem 2rem;
+  cursor: pointer;
+}
 
 .authSelect {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .authSelect select {
-    height: 3rem;
-    padding-left: 1rem;
-    margin: .5rem 0;
-    border-radius: var(--border-radius);
-    border: transparent;
-    outline: 1px solid rgb(218, 218, 218);
+  height: 3rem;
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+  border-radius: var(--border-radius);
+  border: transparent;
+  outline: 1px solid rgb(218, 218, 218);
 }
 
 .inputForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .inputForm input {
-    height: 3rem;
-    padding-left: 1rem;
-    margin: .5rem 0;
-    border-radius: var(--border-radius);
-    border: transparent;
-    outline: 1px solid rgb(218, 218, 218);
+  height: 3rem;
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+  border-radius: var(--border-radius);
+  border: transparent;
+  outline: 1px solid rgb(218, 218, 218);
 }
 
 .labelFor {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
