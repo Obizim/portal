@@ -37,7 +37,7 @@ export default function Login() {
         );
         let data = res.data;
         Cookies.set("userToken", data.token, { expires: 7 });
-        router.reload();
+        router.push('/job-boards');
         toast.success("Login successful", {
           theme: "colored",
         });

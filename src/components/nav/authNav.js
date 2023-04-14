@@ -23,7 +23,7 @@ export const AuthNav = () => {
         <ul className={Styles.menu_links}>
             <Link href="/job-boards"><li>Find Jobs</li></Link>
             <Link href="/resources"><li>Resources</li></Link>
-            {user.role === 'recruiter' && <Link href="/post-jobs"><li>Post job</li></Link>}
+            {user && user.role === 'recruiter' && <Link href="/post-jobs"><li>Post job</li></Link>}
             <div className={Styles.dropdown}>
             <button className={Styles.account}><li><FiUser /></li></button>
                 <div className={Styles.dropdown_content}>

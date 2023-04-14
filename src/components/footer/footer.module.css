@@ -32,6 +32,7 @@
     height: 3rem;
     border: 1.5px solid gray;
     padding: .5rem;
+    background-color: transparent;
     border-radius: var(--border-radius);
 }
 
@@ -40,7 +41,7 @@
     color: #fff;
     border: 2px solid #fff;
     border-radius: var(--border-radius);
-    height: 2rem;
+    height: 3rem;
 }
 
 .copyright {

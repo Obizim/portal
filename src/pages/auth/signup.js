@@ -38,8 +38,7 @@ export default function Signup() {
         const res = await axios.post("http://localhost:4000/api/users", formData)
         let data = res.data
         Cookies.set('userToken', data.token, { expires: 7 })
-        router.reload()
-        router.push("/jobs");
+        router.push("/job-boards");
         toast.success('Registration successful',{
           theme: "colored"
         });
