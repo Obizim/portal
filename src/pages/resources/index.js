@@ -7,7 +7,7 @@ export default function Resources() {
     <section className={Styles.resources}>
       <h2>Resources</h2>
       <div className={Styles.cards}>
-        {data.map(res => (<article key={res.id} className={Styles.card}>
+        {data && data.map(res => (<article key={res.id} className={Styles.card}>
             <figure className={Styles.card_image}>
                 <Image src={res.image} alt={res.title} width={350} height={150} style={{'objectFit': "cover"}}></Image>
             </figure>

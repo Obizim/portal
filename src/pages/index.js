@@ -26,7 +26,7 @@ export default function Home() {
           <div className={styles.sidebar}>
             <h2>Resources</h2>
             <p>Career resources to help you on your journey.</p>
-            <Link href="/resources" className={styles.resources}><FiArrowRight /></Link>
+            <Link href="/resources" className={styles.resources}>la</Link>
           </div>
           <div>
             <h2>Latest Opportunities</h2>

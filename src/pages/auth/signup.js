@@ -6,8 +6,9 @@ import { Button } from "@/components/forms/button";
 import { Input } from "@/components/forms/input";
 import { Select } from "@/components/forms/select";
 import Styles from "@/pages/auth/auth.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
+import { authContext } from "@/context/auth";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,7 @@ export default function Signup() {
     password: "",
   });
   const { role, name, email, password } = formData;
+  const { setUser } = useContext(authContext);
   const router = useRouter();
 
   const onChange = (e) => {
@@ -38,6 +40,7 @@ export default function Signup() {
         const res = await axios.post("http://localhost:4000/api/users", formData)
         let data = res.data
         Cookies.set('userToken', data.token, { expires: 7 })
+        setUser(data)
         router.push("/job-boards");
         toast.success('Registration successful',{
           theme: "colored"

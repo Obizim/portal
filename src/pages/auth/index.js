@@ -3,14 +3,16 @@ import { Input } from "@/components/forms/input";
 import Styles from "@/pages/auth/auth.module.css";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Loading } from "@/components/loading";
+import { authContext } from "@/context/auth";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
+  const { setUser } = useContext(authContext);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -37,6 +39,7 @@ export default function Login() {
         );
         let data = res.data;
         Cookies.set("userToken", data.token, { expires: 7 });
+        setUser(data)
         router.push('/job-boards');
         toast.success("Login successful", {
           theme: "colored",

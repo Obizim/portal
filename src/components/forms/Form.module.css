@@ -5,6 +5,7 @@
 .form input {
   outline: 2px solid rgb(218, 218, 218);
   height: 4rem;
+  margin: .5rem 0;
   flex-basis: 25%;
   width: 100%;
   padding: 1.1rem;

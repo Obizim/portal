@@ -1,6 +1,6 @@
 import Link from "next/link";
 // import Image from 'next/image'
-import { FiHome, FiMapPin, FiDollarSign } from 'react-icons/fi'
+// import { FiHome, FiMapPin } from 'react-icons/fi'
 import styles from '@/components/cards/jbcards.module.css'
 
 export const JbCards = () => {
@@ -10,12 +10,12 @@ export const JbCards = () => {
         <div className={styles.card}>
                 <div className={styles.contents}>
                     <div className={styles.cl}>
-                        <p><FiHome /> Linear</p>
+                        <p>Linear</p>
                         <p className={styles.posted}>Posted: 2 days ago</p>
                     </div>
                     <h3>Junior Architect</h3>
                     <div className={styles.cl}>
-                        <p><FiMapPin/> London</p>
+                        <p>London</p>
                         <p>$30,000</p>
                         <p>time</p>
                     </div>

@@ -11,11 +11,11 @@ import { Loading } from "@/components/loading";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Layouts({ children }) {
-  const { user, setUser } = useContext(authContext);
+  const { user,setUser } = useContext(authContext);
   const [loading, setLoading] = useState(false)
 
-  const userToken = Cookies.get('userToken')
   useEffect(() => {
+    const userToken = Cookies.get('userToken')
     if (userToken) {
       setLoading(true)
       axios.get('http://localhost:4000/api/users/me', {
@@ -31,12 +31,12 @@ export default function Layouts({ children }) {
         });
       })
     }
-  }, [setUser, userToken]);
+  }, [setUser]);
 
   return (
     <section className={inter.className}>
       {loading ? <Loading /> : <>
-      {!userToken ? <Nav /> : <AuthNav />}
+      {!user ? <AuthNav /> : <Nav />}
       <main>{children}</main>
       <Footer />
       </>}
