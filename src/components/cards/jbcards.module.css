@@ -12,21 +12,9 @@
     border-left: 6px solid orangeRed;
     padding: 0.6rem;
     margin: 1rem 0;
+    width: 100%;
     border-radius: var(--border-radius);
 }
-
-/* .card_image {
-  width: 70px;
-  height: 50px;
-  padding-right: 1rem;
-}
-
-.card_image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-} */
 
 .contents {
   flex-basis: 85%;
@@ -55,4 +43,12 @@
   text-overflow: ellipsis;
   white-space: normal;
   line-height: 1.3rem;
+}
+
+.type {
+  background-color: rgb(223, 70, 14);
+  color: #fff;
+  opacity: .7;
+  padding: .2rem .3rem;
+  border-radius: 5px;
 }

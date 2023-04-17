@@ -1,14 +1,35 @@
 .jobPage {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem 0.9rem;
+  max-width: 780px;
+  margin: 0rem auto;
+  padding: 0rem 0.9rem;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.jpcard {
-  flex-basis: 60%;
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.tabs button {
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.active {
+  border-bottom: 5px solid orangered !important;
+  color: #0500FF;
+  font-weight: bold;
+}
+
+.tabContent {
+  margin-bottom: 2.5rem;
 }
 
 .jp_heading {
@@ -45,24 +66,6 @@
   margin-left: 4rem;
 }
 
-.related_jobs {
-  flex-basis: 25%;
-  border-radius: 10px;
-  padding: 1rem;
-  background-color: #e2e2e2;
-}
-
-.r_jobs {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.r_jobs span {
-  margin: 0.5rem 0;
-  cursor: pointer;
-}
-
 .labelTitle {
   font-size: 1.5rem;
 }
@@ -97,6 +100,7 @@
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem 0;
+  height: max-content;
   background-color: #e2e2e2;
 }
 

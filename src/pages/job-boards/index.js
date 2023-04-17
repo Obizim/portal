@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { authContext } from '@/context/auth'
 
 export default function Jobs() {
-    const { data } = useContext(authContext)
+    const { jobs } = useContext(authContext)
     return (
         <section className={Styles.viewsJobs}>
             <header className={Styles.header_bg}>
@@ -31,7 +31,7 @@ export default function Jobs() {
             </div>
         </div>
     </div>
-    <JbCards />
+    <JbCards posts={jobs} />
    </div>
 </section>
     )

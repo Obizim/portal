@@ -4,8 +4,12 @@ import { Search } from '@/components/forms/search'
 import { JbCards } from '@/components/cards/jbcards'
 import { FiArrowRight } from 'react-icons/fi'
 import Link from 'next/link'
+import { useContext, useEffect } from 'react'
+import { authContext } from '@/context/auth'
 
 export default function Home() {
+  const { jobs } = useContext(authContext)
+  const post = jobs.slice(0, 3).map(j => j)
   return (
     <>
       <Head>
@@ -26,11 +30,11 @@ export default function Home() {
           <div className={styles.sidebar}>
             <h2>Resources</h2>
             <p>Career resources to help you on your journey.</p>
-            <Link href="/resources" className={styles.resources}>la</Link>
+            <Link href="/resources" className={styles.resources}><FiArrowRight /></Link>
           </div>
           <div>
             <h2>Latest Opportunities</h2>
-            <JbCards />
+            <JbCards posts={post} />
           </div>
         </section>
       </main>
