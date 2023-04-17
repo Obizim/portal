@@ -81,6 +81,10 @@
   margin: 3rem 0;
 }
 
+.type {
+  text-transform: capitalize;
+}
+
 .bg_title {
   margin: 1rem 0;
 }
@@ -88,12 +92,6 @@
 .jobs_container {
   display: grid;
   gap: 2rem;
-}
-
-@media (min-width: 680px) {
-  .jobs_container {
-    grid-template-columns: .4fr 1fr;
-  }
 }
 
 .filters {
@@ -106,4 +104,28 @@
 
 .checkboxes > * {
   margin: 0.5rem 0;
+}
+
+.jp_description {
+  line-height: 1.5rem;
+  margin: 1rem 0;
+}
+
+.jp_description h2 {
+  margin: .4rem 0 .8rem;
+}
+
+.applyForm {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 680px) {
+  .jobs_container {
+    grid-template-columns: .4fr 1fr;
+  }
+  
+  .applyForm {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

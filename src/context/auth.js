@@ -15,7 +15,6 @@ const AuthProvider = ({ children }) => {
         `http://localhost:4000/api/jobs?title=${searchQuery}&location=${locationQuery}`
       );
       const data = res;
-      console.log(data);
       setJobs(data.data);
     } catch (error) {
       console.error("Error fetching search results:", error);
