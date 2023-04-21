@@ -4,7 +4,7 @@ import styles from '@/components/cards/jbcards.module.css'
 export const JbCards = ({posts}) => {
     return (
       <section className={styles.cards}>
-        {posts && posts.map(m => <><Link key={m._id} href={`/job-boards/${m._id}`}>
+        {posts && posts.map(m => <Link key={m._id} href={`/job-boards/${m._id}`}>
         <div className={styles.card}>
                 <div className={styles.contents}>
                     <div className={styles.cl}>
@@ -20,7 +20,7 @@ export const JbCards = ({posts}) => {
                     <div className={styles.description} dangerouslySetInnerHTML={{__html: m.desc}}></div>
                 </div>
             </div>
-            </Link></>)}
+            </Link>)}
         
       </section>
     );

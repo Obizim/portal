@@ -4,7 +4,7 @@ import { Search } from '@/components/forms/search'
 import { JbCards } from '@/components/cards/jbcards'
 import { FiArrowRight } from 'react-icons/fi'
 import Link from 'next/link'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { authContext } from '@/context/auth'
 
 export default function Home() {

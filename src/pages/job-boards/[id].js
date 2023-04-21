@@ -19,7 +19,6 @@ export default function JbDetail({jobData}) {
   const [tabToggle, setTabToggle] = useState(1);
 
   const handleTabClick = (i) => {
-    console.log(i);
     setTabToggle(i);
   };
   return (

@@ -12,14 +12,30 @@ const AuthProvider = ({ children }) => {
   const getJobs = useCallback(async () => {
     try {
       const res = await axios.get(
-        `http://localhost:4000/api/jobs?title=${searchQuery}&location=${locationQuery}`
+        `http://localhost:4000/api/jobs`
       );
       const data = res;
+      console.log(data);
       setJobs(data.data);
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
-  }, [searchQuery, locationQuery]);
+  }, []);
+
+
+  const searchJobs = async () => {
+    try {
+      if(searchQuery || locationQuery ) {
+        const res = await axios.get(
+          `http://localhost:4000/api/jobs?title=${searchQuery}&location=${locationQuery}`
+        );
+        const data = res;
+        setJobs(data.data);
+      }
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+    }
+  };
 
   useEffect(() => {
     getJobs()
@@ -36,6 +52,7 @@ const AuthProvider = ({ children }) => {
         setLocationQuery,
         jobs,
         getJobs,
+        searchJobs
       }}
     >
       {children}
