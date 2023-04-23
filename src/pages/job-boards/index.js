@@ -31,6 +31,7 @@ export default function Jobs() {
             </div>
         </div>
     </div>
+    {jobs.length === 0 && <div>The search did not match any jobs!!!</div>}
     <JbCards posts={jobs} />
    </div>
 </section>

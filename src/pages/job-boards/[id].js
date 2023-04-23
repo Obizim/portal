@@ -2,8 +2,11 @@ import Link from "next/link";
 import axios from 'axios'
 import Styles from "@/pages/job-boards/Jobs.module.css"
 import { Button } from "@/components/forms/button";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Input } from "@/components/forms/input";
+import { toast } from "react-toastify";
+import { authContext } from "@/context/auth";
+import { useRouter } from "next/router";
 
 export default function JbDetail({jobData}) {
   let tabs = [
@@ -16,11 +19,43 @@ export default function JbDetail({jobData}) {
       title: "Apply",
     },
   ];
+  const { user } = useContext(authContext)
+  const router = useRouter()
   const [tabToggle, setTabToggle] = useState(1);
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+  });
+  const { email, firstname, lastname } = formData;
 
   const handleTabClick = (i) => {
     setTabToggle(i);
   };
+
+  const onChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    if (email === "" || firstname === "" || lastname === "") {
+      toast.error("Please fill all missing fields !!", {
+        theme: "colored",
+      });
+    }else if(!user ){
+      router.push('/auth')
+      toast.error("Only authenticated users can apply!!", {
+        theme: "colored",
+      });
+    }else {
+      toast.success("Job application successful!!", {
+        theme: "colored",
+      });
+      setFormData({firstname: "", lastname: "", email: ""});
+    }
+  }
+
   return (
     <section className={Styles.jobPage}>
       <div className={Styles.tabs}>
@@ -61,32 +96,30 @@ export default function JbDetail({jobData}) {
       )}
 
       {tabToggle === 2 && <>
-      <form className={Styles.applyForm}>
+      <form className={Styles.applyForm} onSubmit={onSubmit}>
       <Input
-          // value="firstname"
+          value={firstname}
           name="firstname"
-          // click={onChange}
+          click={onChange}
           type="text"
           placeholder="First Name"
         />
       <Input
-          // value="lastname"
+          value={lastname}
           name="lastname"
-          // click={onChange}
+          click={onChange}
           type="text"
           placeholder="Last Name"
         />
         <Input
-          // value="email"
+          value={email}
           name="email"
-          // click={onChange}
+          click={onChange}
           type="email"
           placeholder="Email address"
         />
         <Input
-          // value={email}
           name="CV"
-          // click={onChange}
           type="file"
           placeholder="Upload CV"
         />
