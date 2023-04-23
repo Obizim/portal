@@ -1,13 +1,16 @@
 import styles from '@/components/forms/Form.module.css'
 import { authContext } from '@/context/auth';
+import { useRouter } from 'next/router';
 import { useContext } from 'react';
 
-export const Search = () => {
+export const Search = ({protect}) => {
   const { searchQuery, setSearchQuery, locationQuery, setLocationQuery, searchJobs } =  useContext(authContext)
+  const router =useRouter()
 
   const onSubmit = (e) => {
     e.preventDefault()
-    searchJobs()
+    router.push('/job-boards')
+      searchJobs()
   }
 
     return (

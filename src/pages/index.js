@@ -4,11 +4,12 @@ import { Search } from '@/components/forms/search'
 import { JbCards } from '@/components/cards/jbcards'
 import { FiArrowRight } from 'react-icons/fi'
 import Link from 'next/link'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { authContext } from '@/context/auth'
 
 export default function Home() {
   const { jobs } = useContext(authContext)
+  const [check] = useState(true)
   const post = jobs.slice(0, 3).map(j => j)
   return (
     <>
@@ -34,7 +35,7 @@ export default function Home() {
           </div>
           <div>
             <h2>Latest Opportunities</h2>
-            <JbCards posts={post} />
+            <JbCards posts={post} protect={check} />
           </div>
         </section>
       </main>
