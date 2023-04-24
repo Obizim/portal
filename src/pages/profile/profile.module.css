@@ -1,0 +1,11 @@
+.container {
+    max-width: 600px;
+    padding: 2rem .9rem;
+    margin: 3rem auto;
+    background-color: gray;
+    border-radius: 5px;
+}
+
+.container > * {
+    margin: 1rem 0;
+}

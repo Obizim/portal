@@ -9,7 +9,7 @@ export const JbCards = ({posts}) => {
                 <div className={styles.contents}>
                     <div className={styles.cl}>
                         <p>{m.companyName}</p>
-                        <p className={styles.posted}>Posted: 2 days ago</p>
+                        <p className={styles.posted}>Posted: {new Date(m.createdAt).toLocaleString('en-GB', {day:'numeric', month: 'long', year:'numeric'})}</p>
                     </div>
                     <h3>{m.jobTitle}</h3>
                     <div className={styles.cl}>

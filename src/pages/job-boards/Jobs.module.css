@@ -67,7 +67,7 @@
 }
 
 .labelTitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .viewsJobs {
@@ -103,7 +103,11 @@
 }
 
 .checkboxes > * {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+}
+.box > input {
+  margin-right: .5rem;
+  cursor: pointer;
 }
 
 .jp_description {

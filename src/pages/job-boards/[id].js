@@ -80,7 +80,7 @@ export default function JbDetail({jobData}) {
           <div className={Styles.contents}>
             <div className={Styles.jp_cl}>
               <p>Company: {jobData[0].companyName}</p>
-              <p>Posted: 2 days ago</p>
+              <p>Posted: {new Date(jobData[0].createdAt).toLocaleString('en-GB', {day:'numeric', month: 'long', year:'numeric'})}</p>
             </div>
             <div className={Styles.jp_cl}>
               <p>Location: {jobData[0].location}</p>

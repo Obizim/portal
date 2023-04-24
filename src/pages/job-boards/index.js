@@ -17,16 +17,16 @@ export default function Jobs() {
         <div className={Styles.filters}>
                 <label className={Styles.labelTitle} htmlFor="filter">Filter by</label>
         <div className={Styles.checkboxes}>
-            <div>
-                <input type="checkbox" id="internship" name="internship" value="Internship" />
+            <div className={Styles.box}>
+                <input type="radio" id="internship" name="filter" value="internship" />
                 <label htmlFor="internship">Internship</label>
             </div>
-            <div>
-                <input type="checkbox" id="partTime" name="partTime" value="partTime" />
+            <div className={Styles.box}>
+                <input type="radio" id="partTime" name="filter" value="partTime" />
                 <label htmlFor="partTime">Part time</label>
             </div>
-            <div>
-                <input type="checkbox" id="fulltime" name="fulltime" value="fulltime" />
+            <div className={Styles.box}>
+                <input type="radio" id="fulltime" name="filter" value="fulltime" />
                 <label htmlFor="fulltime">Full-time</label>
             </div>
         </div>

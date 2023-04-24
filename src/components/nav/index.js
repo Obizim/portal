@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Anek_Gujarati } from "next/font/google";
 import Styles from "@/components/nav/nav.module.css";
 import { FiUser, FiLogOut } from 'react-icons/fi'
 import { useContext } from "react";
@@ -7,7 +6,6 @@ import { useRouter } from "next/router";
 import { authContext } from "@/context/auth";
 import Cookies from "js-cookie";
 
-const anek = Anek_Gujarati({ subsets: ["latin"] });
 export const Nav = () => {
   const { user, setUser } = useContext(authContext)
   const router = useRouter();
@@ -21,7 +19,7 @@ export const Nav = () => {
   return (
     <header className={Styles.header}>
     <nav className={Styles.nav}>
-        <h1 className={`${Styles.logo} ${anek.className}`}>gradlink</h1>
+        <h1 className={Styles.logo}>gradlink</h1>
         <ul className={Styles.menu_links}>
             <li><Link href="/job-boards">Find Jobs</Link></li>
             <li><Link href="/resources">Resources</Link></li>
@@ -29,7 +27,7 @@ export const Nav = () => {
             <div className={Styles.dropdown}>
             <button className={Styles.account}><li><FiUser /></li></button>
                 <div className={Styles.dropdown_content}>
-                    <div><FiUser />Account</div>
+                    <Link href="/profile"><FiUser />Profile</Link>
                     <button className={Styles.logOut} onClick={handleLogout}><FiLogOut /> Sign out</button>
                 </div>
            </div>
