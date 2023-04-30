@@ -133,7 +133,7 @@ export default function JbDetail({jobData}) {
 
 export const getStaticProps = async ({ params }) => {
   const id = params.id; 
-  const jobData = await axios.get(`http://localhost:4000/api/jobs/${id}`);
+  const jobData = await axios.get(`https://portal-server.cyclic.app/api/jobs/${id}`);
   return {
     props: {
       jobData: jobData.data,
@@ -142,7 +142,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const jobs = await axios.get("http://localhost:4000/api/jobs");
+  const jobs = await axios.get("https://portal-server.cyclic.app/api/jobs");
   const data = jobs.data
   const paths = data.map((jobId) => {
     return {

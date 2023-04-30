@@ -37,7 +37,7 @@ const Profile = () => {
         setLoading(true);
         const userToken = Cookies.get("userToken");
         const res = await axios.put(
-          "http://localhost:4000/api/users/me",
+          "https://portal-server.cyclic.app/api/users/me",
           formData,
           {
             headers: {

@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
   const getJobs = useCallback(async () => {
     try {
       const res = await axios.get(
-        `http://localhost:4000/api/jobs`
+        `https://portal-server.cyclic.app/api/jobs`
       );
       const data = res;
       setJobs(data.data);
@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
     try {
       if(searchQuery || locationQuery ) {
         const res = await axios.get(
-          `http://localhost:4000/api/jobs?title=${searchQuery}&location=${locationQuery}`
+          `https://portal-server.cyclic.app/api/jobs?title=${searchQuery}&location=${locationQuery}`
         );
         const data = res;
         setJobs(data.data);

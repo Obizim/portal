@@ -34,7 +34,7 @@ export default function Login() {
       try {
         setLoading(true);
         const res = await axios.post(
-          "http://localhost:4000/api/users/login",
+          "https://portal-server.cyclic.app/api/users/login",
           formData
         );
         let data = res.data;
@@ -49,6 +49,7 @@ export default function Login() {
         toast.error(`${e.response.data.message}`, {
           theme: "colored",
         });
+        setLoading(false);
       }
     }
   };

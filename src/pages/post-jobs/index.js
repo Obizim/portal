@@ -47,7 +47,7 @@ export default function PostJobs() {
       try {
         setLoading(true)
         const userToken = Cookies.get('userToken')
-        const res = await axios.post("http://localhost:4000/api/jobs", {
+        const res = await axios.post("https://portal-server.cyclic.app/api/jobs", {
           jobTitle,
           companyName,
           type,

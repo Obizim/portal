@@ -9,8 +9,10 @@ import Styles from "@/pages/auth/auth.module.css";
 import { useContext, useState } from "react";
 import Link from "next/link";
 import { authContext } from "@/context/auth";
+import { Loading } from "@/components/loading";
 
 export default function Signup() {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     role: "individual",
     name: "",
@@ -37,7 +39,8 @@ export default function Signup() {
       });
     }else{
       try{
-        const res = await axios.post("http://localhost:4000/api/users", formData)
+        setLoading(true);
+        const res = await axios.post("https://portal-server.cyclic.app/api/users", formData)
         let data = res.data
         Cookies.set('userToken', data.token, { expires: 7 })
         setUser(data)
@@ -45,11 +48,12 @@ export default function Signup() {
         toast.success('Registration successful',{
           theme: "colored"
         });
-        return data
+        setLoading(false);
       }catch(e) {
         toast.error(`${e.response.data.message}`,{
           theme: "colored"
         });
+        setLoading(false);
       }
     }
   };
@@ -79,7 +83,10 @@ export default function Signup() {
           type="password"
           placeholder="Password"
         />
-        <Button type="submit" value="Create account" />
+        <div className={Styles.load_flex}>
+          <Button type="submit" value="Create Account" />
+          {loading && <Loading /> }
+        </div>
       </form>
 
       <div className={Styles.notYet}>Already registered? <Link href="/auth">Login!</Link></div>

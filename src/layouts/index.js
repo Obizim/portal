@@ -18,7 +18,7 @@ export default function Layouts({ children }) {
     const userToken = Cookies.get('userToken')
     if (userToken) {
       setLoading(true)
-      axios.get('http://localhost:4000/api/users/me', {
+      axios.get('https://portal-server.cyclic.app/api/users/me', {
         headers: {
           Authorization: `Bearer ${userToken}`
         }
